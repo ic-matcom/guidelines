@@ -13,4 +13,4 @@ Think of coding standards as a set of rules, techniques, and best practices to c
 ## table of Contents
 [general](./general/README.md)
 
-[Hyperledger Fabric - Go Chaincode](./general/golang/hyperledger_fabric_chaincode/README.md)
+[Hyperledger Fabric - Go Chaincode](./golang/hyperledger_fabric_chaincode/README.md)
