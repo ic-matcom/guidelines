@@ -1,3 +1,10 @@
+# GIT COMMIT
+It provides an easy set of rules for creating an explicit git commit
+
+[read me in spanish](./commits/index.es.md)
+
+[read me in english](./commits/index.en.md)
+
 # CODETAGS (ETIQUETAS DE CÓDIGO)
 
 Programmers widely use ad-hoc code comment markup conventions to serve as reminders of sections of code that need closer inspection or review.
