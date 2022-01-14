@@ -72,10 +72,8 @@ func Record(ctx contractapi.TransactionContextInterface) error {
 
 ### Chaincode namespace
 Contracts namespaces:
-* org.tecnomatica.participant
-* org.tecnomatica.fuelbatch
-* org.tecnomatica.document
-* org.tecnomatica.infraestructure
+* org.uh.user
+* org.uh.role
 
 A **contract namespace** allows it to keep its world state separate from other chaincodes.
 Specifically, smart contracts in the same chaincode share direct access to the same world state,
@@ -86,3 +84,29 @@ chaincode-to-chaincode invocation. [more](https://hyperledger-fabric.readthedocs
 
 ## Chaincode Developer Terminology
 ### Smart contracts and Chaincode
+A smart contract is defined within a chaincode. Multiple smart contracts can be defined within the same chaincode.
+When a chaincode is deployed, all smart contracts within it are made available to applications.
+
+### Contract Name
+Each smart contract within a **cc-traceability** chaincode is uniquely identified by its contract name.
+Specifically, uses an explicit DNS-style naming convention to help organize clear and meaningful names;
+**org.tecnomatica.fuelbatch** conveys that the **channeljet**  network has defined a standard **fuelbatch** smart contract.
+
+### Considerations
+- Multiple smart contracts should only be deployed in the same chaincode if they are very closely related. Usually, this is only necessary if they share the same world state.
+- Chaincode namespaces provide isolation between different world states. In general it makes sense to isolate unrelated data from each other. Note that you cannot choose the chaincode namespace; it is assigned by Hyperledger Fabric, and maps directly to the name of the chaincode.
+- For chaincode to chaincode interactions using the invokeChaincode() API, both chaincodes must be installed on the same peer.
+  - For interactions that only require the called chaincode’s world state to be queried, the invocation can be in a different channel to the caller’s chaincode.
+  - For interactions that require the called chaincode’s world state to be updated, the invocation must be in the same channel as the caller’s chaincode.
+  
+[know more](https://hyperledger-fabric.readthedocs.io/en/release-2.2/smartcontract/smartcontract.html)
+
+## Best Practices
+
+[know more](https://blog.learngoprogramming.com/golang-const-type-enums-iota-bc4befd096d3)
+
+## Spec
+[know more](https://golang.org/ref/spec)
+
+## Unit Test and BDD
+[go to](./testing/README.md)
