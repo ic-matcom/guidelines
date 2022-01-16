@@ -93,21 +93,36 @@ Las palabras clave “DEBE” (“MUST”), “NO DEBE” (“MUST NOT”), “R
 en [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 1. Los commits DEBEN iniciarse con un prefijo de tipo que consiste en un sustantivo, `feat`, `fix`, etc., seguido del ámbito OPCIONAL, `!`OPCIONAL, y dos puntos y un espacio REQUERIDO.
-2. El tipo `feat` DEBE ser usado cuando un commit agrega una nueva funcionalidad a la aplicación o librería.
-3. El tipo `fix` DEBE ser usado cuando el commit representa una corrección a un error en el código de la aplicación (bug).
-4. Un ámbito PUEDE ser añadido después de un tipo. Un ámbito DEBE consistir en un sustantivo que describa una sección de la base del código encerrado entre paréntesis, ej., `fix(parser):`.
-5. Una descripción DEBE ir inmediatamente después del punto y coma y espacio del prefijo de tipo/ámbito. La descripción es resúmen corto de los cambios realizados en el código, ej., _fix: array parsing issue when multiple spaces were contained in string._.
-6. Un cuerpo de commit más extenso PUEDE agregarse después de la descripción corta, dando información contextual adicional acerca de los cambios en el código. El cuerpo DEBE iniciar después de una línea en blanco después de la descripción.
-7. Un cuerpo de commit es de forma-libre y PUEDE consistir de cualquier número de párrafos separados por una nueva línea.
-8. Una o más notas al pie PUEDEN ser añadidas una línea en blanco después del cuerpo. Cada nota al pie DEBE consistir de una palabra ficha, seguida ya sea por un separador `:<espacio>` o `<espacio>#`, seguido por un valor cadena (string) (esto está inspirado por la [convención git trailer](https://git-scm.com/docs/git-interpret-trailers)).
-9. Una palabra ficha de una nota al pie DEBE usar `-` en lugar de caracteres de espacios en blanco, ej., `Acked-by` (esto ayuda a diferenciar la sección de la nota al pie de un cuerpo multi párrafo). Se hace una excepción para `BREAKING CHANGE`, que también PUEDE ser usada como palabra ficha.
-10. Una nota al pie PUEDE contener espacios y líneas en blanco, y el parseo DEBE terminar cuando se observe el siguiente separador/ficha.
-11. Los cambios de ruptura DEBEN ser indicados en el prefijo de tipo/ámbito de un commit, o como una entrada en la nota al pie.
-12. Si se incluye como una nota al pie, un cambio de ruptura DEBE consistir del texto en mayúsculas BREAKING CHANGE, seguido de dos puntos, y una descripción, ej., _BREAKING CHANGE: environment variables now take precedence over config files_.
-13. Si se incluye en el prefijo de tipo/ámbito, cambios de ruptura DEBEN ser indicados por un `!` inmediatamente después de `:`. Si `!` es usado, `BREAKING CHANGE:` PUEDE ser omitido de la sección de la nota al pie, y la descripción del commit DEBERÁ ser usada para describir el cambio de ruptura.
-14. Tipos diferentes a `feat` y `fix` PUEDEN ser usados en los mensajes de commit, ej., _docs: updated ref docs._.
-15. Las unidades de información que componen Commits Convencionales NO DEBEN ser tratados como implementadores sensitivos de caso, con la excepción de BREAKING CHANGE que DEBE ir en mayúsculas.
-16. BREAKING-CHANGE DEBE ser sinónimo de BREAKING CHANGE, cuando se usa en una nota al pie.
+1. Un ámbito PUEDE ser añadido después de un tipo. Un ámbito DEBE consistir en un sustantivo que describa una sección de la base del código encerrado entre paréntesis, ej., `fix(parser):`.
+1. Una descripción DEBE ir inmediatamente después del punto y coma y espacio del prefijo de tipo/ámbito. La descripción es resúmen corto de los cambios realizados en el código, ej., _fix: array parsing issue when multiple spaces were contained in string._.
+1. Un cuerpo de commit más extenso PUEDE agregarse después de la descripción corta, dando información contextual adicional acerca de los cambios en el código. El cuerpo DEBE iniciar después de una línea en blanco después de la descripción.
+1. Un cuerpo de commit es de forma-libre y PUEDE consistir de cualquier número de párrafos separados por una nueva línea.
+1. Una o más notas al pie PUEDEN ser añadidas una línea en blanco después del cuerpo. Cada nota al pie DEBE consistir de una palabra ficha, seguida ya sea por un separador `:<espacio>` o `<espacio>#`, seguido por un valor cadena (string) (esto está inspirado por la [convención git trailer](https://git-scm.com/docs/git-interpret-trailers)).
+1. Una palabra ficha de una nota al pie DEBE usar `-` en lugar de caracteres de espacios en blanco, ej., `Acked-by` (esto ayuda a diferenciar la sección de la nota al pie de un cuerpo multi párrafo). Se hace una excepción para `BREAKING CHANGE`, que también PUEDE ser usada como palabra ficha.
+1. Una nota al pie PUEDE contener espacios y líneas en blanco, y el parseo DEBE terminar cuando se observe el siguiente separador/ficha.
+1. Los cambios de ruptura DEBEN ser indicados en el prefijo de tipo/ámbito de un commit, o como una entrada en la nota al pie.
+1. Si se incluye como una nota al pie, un cambio de ruptura DEBE consistir del texto en mayúsculas BREAKING CHANGE, seguido de dos puntos, y una descripción, ej., _BREAKING CHANGE: environment variables now take precedence over config files_.
+1. Si se incluye en el prefijo de tipo/ámbito, cambios de ruptura DEBEN ser indicados por un `!` inmediatamente después de `:`. Si `!` es usado, `BREAKING CHANGE:` PUEDE ser omitido de la sección de la nota al pie, y la descripción del commit DEBERÁ ser usada para describir el cambio de ruptura.
+1. Tipos diferentes a `feat` y `fix` PUEDEN ser usados en los mensajes de commit, ej., _docs: updated ref docs._.
+1. Las unidades de información que componen Commits Convencionales NO DEBEN ser tratados como implementadores sensitivos de caso, con la excepción de BREAKING CHANGE que DEBE ir en mayúsculas.
+1. BREAKING-CHANGE DEBE ser sinónimo de BREAKING CHANGE, cuando se usa en una nota al pie.
+
+## Commit types
+
+| Commit Type | Title                    | Description                                                                                                 | Emoji  |
+| ----------- | ------------------------ | ----------------------------------------------------------------------------------------------------------- |:------:|
+| `feat`      | Funcionalidades          | DEBE ser usado cuando un commit agrega una nueva funcionalidad a la aplicación o librería                   | ✨     |
+| `fix`       | Corrección de errores    | DEBE ser usado cuando el commit representa una corrección a un error en el código de la aplicación (bug)    | 🐛     |
+| `docs`      | Documentación            | Solo cambios en la documentación                                                                            | 📚     |
+| `style`     | Estilos                  | Cambios que no afectan el significado del cód (espacios en blanco, formato, puntos y coma faltantes, etc.)  | 💎    |
+| `refactor`  | Refactorización de código| A code change that neither fixes a bug nor adds a feature                                                   | 📦     |
+| `perf`      | Mejoras de rendimiento   | A code change that improves performance                                                                     | 🚀     |
+| `test`      | Pruebas                  | Adding missing tests or correcting existing tests                                                           | 🚨     |
+| `build`     | Builds                   | Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)         | 🛠     |
+| `ci`        | Continuous Integrations  | Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) | ⚙️  |
+| `chore`     | Tareas                   | Other changes that don't modify src or test files                                                           | ♻️  |
+| `revert`    | Retorno                  | Revierte un commit anterior                                                                                 | 🗑     |
+| `bump`      | Bump                     | Aumentar la versión, p. dependencia                                                                         |       |
 
 ## ¿Por qué usar Commits Convencionales?
 
