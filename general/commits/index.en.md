@@ -37,6 +37,10 @@ A scope may be provided to a commit's type, to provide additional contextual inf
 
 ## Examples
 
+### Commit message with description
+
+feat (conventional commits): add "commit types" table
+
 ### Commit message with description and breaking change footer
 ```
 feat: allow provided config object to extend other configs
@@ -89,10 +93,8 @@ Refs: #123
 
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
-1. Commits MUST be prefixed with a type, which consists of a noun, `feat`, `fix`, etc., followed
+1. Commits MUST be prefixed with a type, which consists of a noun, `feat`, `fix`, [etc.](#commit-types), followed
    by the OPTIONAL scope, OPTIONAL `!`, and REQUIRED terminal colon and space.
-1. The type `feat` MUST be used when a commit adds a new feature to your application or library.
-1. The type `fix` MUST be used when a commit represents a bug fix for your application.
 1. A scope MAY be provided after a type. A scope MUST consist of a noun describing a
    section of the codebase surrounded by parenthesis, e.g., `fix(parser):`
 1. A description MUST immediately follow the colon and space after the type/scope prefix.
@@ -116,6 +118,24 @@ The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL 
 1. Types other than `feat` and `fix` MAY be used in your commit messages, e.g., _docs: updated ref docs._
 1. The units of information that make up Conventional Commits MUST NOT be treated as case sensitive by implementors, with the exception of BREAKING CHANGE which MUST be uppercase.
 1. BREAKING-CHANGE MUST be synonymous with BREAKING CHANGE, when used as a token in a footer.
+
+
+## Commit types
+
+| Commit Type | Title                    | Description                                                                                                 | Emoji  |
+| ----------- | ------------------------ | ----------------------------------------------------------------------------------------------------------- |:------:|
+| `feat`      | Features                 | The type `feat` MUST be used when a commit adds a new feature to your application or library                | ✨     |
+| `fix`       | Bug Fixes                | The type `fix` MUST be used when a commit represents a bug fix for your application                         | 🐛     |
+| `docs`      | Documentation            | Documentation only changes                                                                                  | 📚     |
+| `style`     | Styles                   | Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)      | 💎     |
+| `refactor`  | Code Refactoring         | A code change that neither fixes a bug nor adds a feature                                                   | 📦     |
+| `perf`      | Performance Improvements | A code change that improves performance                                                                     | 🚀     |
+| `test`      | Tests                    | Adding missing tests or correcting existing tests                                                           | 🚨     |
+| `build`     | Builds                   | Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)         | 🛠     |
+| `ci`        | Continuous Integrations  | Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) | ⚙️     |
+| `chore`     | Chores                   | Other changes that don't modify src or test files                                                           | ♻️     |
+| `revert`    | Reverts                  | Reverts a previous commit                                                                                   | 🗑     |
+
 
 ## Why Use Conventional Commits
 
