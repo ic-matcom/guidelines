@@ -132,10 +132,10 @@ The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL 
 | `perf`      | Performance Improvements | A code change that improves performance                                                                     | 🚀     |
 | `test`      | Tests                    | Adding missing tests or correcting existing tests                                                           | 🚨     |
 | `build`     | Builds                   | Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)         | 🛠     |
-| `ci`        | Continuous Integrations  | Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) | ⚙️     |
-| `chore`     | Chores                   | Other changes that don't modify src or test files                                                           | ♻️     |
+| `ci`        | Continuous Integrations  | Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs) | ⚙️  |
+| `chore`     | Chores                   | Other changes that don't modify src or test files                                                           | ♻️  |
 | `revert`    | Reverts                  | Reverts a previous commit                                                                                   | 🗑     |
-
+| `bump`      | Bump                     | Increase the version of something e.g. dependency                                                           |       |
 
 ## Why Use Conventional Commits
 
