@@ -27,7 +27,7 @@ a los consumidores de tu librería:
 1. **feat:** un commit de _tipo_ `feat` introduce una nueva funcionalidad en la base del código (se correlaciona con [`MINOR`](http://semver.org/#summary) en el Versionado Semántico).
 1. **BREAKING CHANGE:** un commit que contiene la nota al pie `BREAKING CHANGE:`, o que agrega un `!` después del tipo/ámbito, introduce un cambio de ruptura de API (se correlaciona con [`MAJOR`](http://semver.org/#summary) en el Versionado Semántico).
    Un BREAKING CHANGE puede ser parte de commits de cualquier _tipo_.
-1. _tipos_ distintos a `fix:` y `feat:` están permitidos, por ejemplo [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) (basados en [la convención de Angular](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines)) que recomienda `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, y otros.
+1. _tipos_ distintos a `fix:` y `feat:` están permitidos, por ejemplo [@commitlint/config-conventional](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional) (basados en [la convención de Angular](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#-commit-message-guidelines)) que recomienda `build:`, `chore:`, `ci:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, y [otros](#tipos-de-commits).
 1. _notas al pie_ distintas de `BREAKING CHANGE: <descripción>` pueden ser añadidas y siguen una convención similar al [formato git trailer](https://git-scm.com/docs/git-interpret-trailers).
 
 Tipos adicionales no son obligatorios en la especificación de Commits Convencionales,
@@ -92,7 +92,7 @@ Las palabras clave “DEBE” (“MUST”), “NO DEBE” (“MUST NOT”), “R
 “OPCIONAL” (“OPTIONAL”) en este documento se deben interpretar como se describe
 en [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
-1. Los commits DEBEN iniciarse con un prefijo de tipo que consiste en un sustantivo, `feat`, `fix`, etc., seguido del ámbito OPCIONAL, `!`OPCIONAL, y dos puntos y un espacio REQUERIDO.
+1. Los commits DEBEN iniciarse con un prefijo de tipo que consiste en un sustantivo, `feat`, `fix`, [etc.](#tipos-de-commits), seguido del ámbito OPCIONAL, `!`OPCIONAL, y dos puntos y un espacio REQUERIDO.
 1. Un ámbito PUEDE ser añadido después de un tipo. Un ámbito DEBE consistir en un sustantivo que describa una sección de la base del código encerrado entre paréntesis, ej., `fix(parser):`.
 1. Una descripción DEBE ir inmediatamente después del punto y coma y espacio del prefijo de tipo/ámbito. La descripción es resúmen corto de los cambios realizados en el código, ej., _fix: array parsing issue when multiple spaces were contained in string._.
 1. Un cuerpo de commit más extenso PUEDE agregarse después de la descripción corta, dando información contextual adicional acerca de los cambios en el código. El cuerpo DEBE iniciar después de una línea en blanco después de la descripción.
@@ -107,7 +107,7 @@ en [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 1. Las unidades de información que componen Commits Convencionales NO DEBEN ser tratados como implementadores sensitivos de caso, con la excepción de BREAKING CHANGE que DEBE ir en mayúsculas.
 1. BREAKING-CHANGE DEBE ser sinónimo de BREAKING CHANGE, cuando se usa en una nota al pie.
 
-## Commit types
+## Tipos de commits
 
 | Commit Type | Title                    | Description                                                                                                 | Emoji  |
 | ----------- | ------------------------ | ----------------------------------------------------------------------------------------------------------- |:------:|

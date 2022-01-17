@@ -11,6 +11,6 @@ Think of coding standards as a set of rules, techniques, and best practices to c
 
 
 ## table of Contents
-[general](./general/README.md)
+[Commits - easy set of rules for creating an explicit git commit](./general/README.md)
 
 [Hyperledger Fabric - Go Chaincode](./golang/hyperledger_fabric_chaincode/README.md)
