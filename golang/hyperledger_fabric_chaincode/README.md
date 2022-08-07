@@ -1,10 +1,42 @@
-## Specifications for the implementation of smart contract
+# Specifications for the implementation of smart contract
 Multiple smart contracts should only be deployed in traceability chaincode because are very closely related and share the same world state.
 
-## Coding Spec
-use package names in singular (do not use plural)
+## Files
 
-use UpperCamelCase in:
+- Go follows a convention where source files are all lower case with underscore separating multiple words.
+- Compound file names are separated with _
+- File names that begin with “.” or “_” are ignored by the go tool
+- Files with the suffix _test.go are only compiled and run by the go test tool.
+  
+ex:
+```bash
+asset_tranfer.go
+```
+
+## Coding Spec - Package names
+use package names in singular (do not use plural)
+```bash
+/crypto
+  |_ tools.go
+  |_ hash.go
+/chaincode
+  |_ asset_tranfer.go  
+```
+## Coding Spec - Functions and Methods
+Use camel case, exported functions should start with uppercase:
+```golang
+// unexported, only visible within the package
+func writeToDB() error {
+    ...
+}
+
+// exported, visible within the package
+func WriteToDB() error {
+...
+}
+```
+
+use CamelCase in:
 * functions name
 * contracts name
 * structs field
@@ -103,7 +135,9 @@ Specifically, uses an explicit DNS-style naming convention to help organize clea
 
 ## Best Practices
 
-[know more](https://blog.learngoprogramming.com/golang-const-type-enums-iota-bc4befd096d3)
+👀 Dave has an excellent article on [Practical Go: Real world advice for writing maintainable Go programs](https://dave.cheney.net/practical-go/presentations/qcon-china.html)
+
+👉🏾 [know more](https://blog.learngoprogramming.com/golang-const-type-enums-iota-bc4befd096d3)
 
 ## Spec
 [know more](https://golang.org/ref/spec)
